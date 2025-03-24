@@ -1,19 +1,18 @@
 [
-    {
-      "name": "Keanu Reeves",
-      "born": 1964
-    },
-    {
-      "name": "Carrie-Anne Moss",
-      "born": 1967
-    },
-    {
-      "name": "Laurence Fishburne",
-      "born": 1961
-    },
-    {
-      "name": "Hugo Weaving",
-      "born": 1960
-    }
-  ]
-  
+  {
+    "name": "Person 1",
+    "age": 25
+  },
+  {
+    "name": "Person 2",
+    "age": 30
+  },
+  {
+    "name": "Person 3",
+    "age": 35
+  },
+  {
+    "name": "Person 4",
+    "age": 40
+  }
+]

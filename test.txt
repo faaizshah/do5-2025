@@ -1,0 +1,138 @@
+Neo4j Cypher Quiz (15 Questions)
+
+Which Cypher command is used to remove all nodes and relationships from the database?
+A. CALL db.schema.visualization
+B. MATCH (n) DETACH DELETE n
+C. MATCH (n) RETURN n
+D. DROP ALL NODES
+What does the following query do?
+MATCH (m:Movie)
+RETURN m.title, m.released
+A. Updates the release year of each movie
+B. Deletes movie nodes from the database
+C. Retrieves the title and release year of all Movie nodes
+D. Creates new Movie nodes with a title property
+Which clause is used to filter query results based on a condition?
+A. WITH
+B. RETURN
+C. WHERE
+D. CREATE
+What does this query accomplish?
+MATCH (m:Movie)
+WHERE m.released > 2005
+RETURN m.title, m.released
+A. Returns only the movies released after 2005
+B. Deletes all movies released after 2005
+C. Updates all movies with a release year greater than 2005
+D. Creates a new property released > 2005
+Which function counts the number of nodes matched by a query?
+A. MIN()
+B. MAX()
+C. SIZE()
+D. COUNT()
+What will this query return?
+MATCH (m:Movie)
+RETURN COUNT(m) AS NumberOfMovies
+A. The total number of relationships in the database
+B. The total number of movie nodes in the database
+C. Only the first movie node found
+D. A list of movie titles with their count
+Which of the following correctly matches and returns a person named "Tom Hanks"?
+A.
+MATCH (n)
+WHERE n.name = 'Tom Hanks'
+RETURN n
+B.
+
+MATCH (n:Person {name: 'Tom Hanks'})
+RETURN n
+C. Both A and B
+D. Neither A nor B
+In this snippet, what does collect(a) do?
+MATCH (m:Movie)<-[:ACTED_IN]-(a:Person)
+WITH m, collect(a) AS Actors
+WHERE size(Actors) > 2 
+RETURN m.title, size(Actors) AS NumberOfActors
+A. It aggregates all Person nodes related to each Movie into a list
+B. It deletes all persons who acted in the movie
+C. It filters out any movies with less than two actors
+D. It counts the number of actors for each movie
+What does the following query return?
+MATCH (m:Movie)
+RETURN MIN(m.released), MAX(m.released)
+A. The average and sum of movie release years
+B. Only the earliest release year
+C. The earliest and latest release years among all movies
+D. All unique release years in ascending order
+Which clause is used to create new nodes or relationships in Neo4j?
+A. MATCH
+B. CREATE
+C. WHERE
+D. DETACH
+What does the query below do?
+CREATE (m:Movie {title: 'MyMovie'})
+CREATE (p:Person {name: 'My Name'})
+CREATE (p)-[:ACTED_IN]->(m)
+A. Creates a MyMovie node, a person named My Name, and a relationship ACTED_IN between them
+B. Deletes a MyMovie node, a person named My Name, and any existing relationship
+C. Returns all movies and people created in the database
+D. Renames an existing movie node to MyMovie
+Which query is used to delete a person node and any relationships it has?
+A. MATCH (p:Person) DELETE p
+B. MATCH (p:Person {name: 'My Name'}) DETACH DELETE p
+C. REMOVE (p:Person)
+D. DETACH (p) DELETE (p)
+CALL db.schema.visualization is typically used to:
+A. Delete the current database schema
+B. Return a visual representation of the database schema
+C. Merge all existing nodes under a single label
+D. Rename schema properties for better readability
+In Cypher, what does WITH m, collect(a) AS Actors enable you to do afterward?
+A. Commit the transaction automatically
+B. Use the aggregated Actors list for further filtering or returning
+C. Remove all actors from the graph
+D. Prevent any further operations on the Actors variable
+Which of the following queries returns the number of actors who acted in each movie, only if that number exceeds 2?
+A.
+MATCH (m:Movie)<-[r:ACTED_IN]-(a:Person)
+WITH m, collect(a) AS Actors
+WHERE size(Actors) > 2
+RETURN m.title, size(Actors) AS NumberOfActors
+B.
+
+MATCH (m:Movie)<-[r:ACTED_IN]-(a:Person)
+WHERE size(a) > 2
+RETURN m.title, size(a) AS NumberOfActors
+C.
+
+MATCH (m:Movie)
+WHERE m.title > 2
+RETURN m.title
+D.
+
+MATCH (m:Movie)<-[r:ACTED_IN]-(a:Person)
+RETURN m.title, size(a) AS NumberOfActors
+Answer Key
+
+B
+C
+C
+A
+D
+B
+C
+A
+C
+B
+A
+B
+B
+B
+a
+
+
+
+
+
+
+
